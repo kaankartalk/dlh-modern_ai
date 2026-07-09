@@ -1,12 +1,18 @@
 #!/usr/bin/env python3
-"""
-"""
+"""Module that visualizes missing values in a DataFrame."""
 import matplotlib.pyplot as plt
 import numpy as np
 
 
 def plot_missingness(df):
-    """
+    """Generate a scatter plot showing the location of missing values
+    in a DataFrame.
+
+    Args:
+        df (pandas.DataFrame): The DataFrame to analyze.
+
+    Returns:
+        None
     """
     plt.figure(figsize=(12, 8))
 

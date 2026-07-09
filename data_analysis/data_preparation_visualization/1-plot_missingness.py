@@ -1,0 +1,19 @@
+#!/usr/bin/env python3
+"""
+"""
+import matplotlib.pyplot as plt
+import numpy as np
+
+
+def plot_missingness(df):
+    """
+    """
+    plt.figure(figsize=(12, 8))
+
+    row_idx, col_idx = np.where(df.isnull().values)
+    plt.scatter(row_idx, col_idx, marker='|')
+    plt.yticks(range(len(df.columns)), df.columns)
+
+    plt.tight_layout()
+    plt.show()
+    

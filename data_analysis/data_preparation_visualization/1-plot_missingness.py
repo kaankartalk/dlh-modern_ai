@@ -17,4 +17,3 @@ def plot_missingness(df):
 
     plt.tight_layout()
     plt.show()
-    

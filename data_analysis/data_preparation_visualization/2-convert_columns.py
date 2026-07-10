@@ -1,5 +1,3 @@
-
-2 convert columns · PY
 #!/usr/bin/env python3
 """Type conversion for the Telco Customer Churn DataFrame."""
  

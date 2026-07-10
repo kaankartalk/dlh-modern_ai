@@ -1,8 +1,6 @@
 #!/usr/bin/env python3
 """Handle missing values in TotalCharges."""
 
-import pandas as pd
-
 
 def clean_total_charges(df, method='drop'):
     """Handle missing values in the TotalCharges column.

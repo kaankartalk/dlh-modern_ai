@@ -16,10 +16,12 @@ def plot_correlation_heatmap(df):
     plt.figure(figsize=(6, 5))
 
     corr = df.select_dtypes(include='number').corr()
-    sns.heatmap(corr, annot=True, cmap='coolwarm', vmin=-1, vmax=1)
+    sns.heatmap(corr, annot=True, cmap='coolwarm', vmin=-1, vmax=1,
+                square=True)
     plt.title('Correlation Matrix')
 
     plt.tight_layout()
     plt.show()
 
     return None
+

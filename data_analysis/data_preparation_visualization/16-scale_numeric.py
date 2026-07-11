@@ -19,4 +19,3 @@ def scale_numeric(df):
     df[cols] = scaler.fit_transform(df[cols])
 
     return df
-

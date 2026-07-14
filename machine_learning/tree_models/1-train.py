@@ -4,4 +4,3 @@
 
 def train_tree(clf, X, y):
     clf.fit(X, y)
-    

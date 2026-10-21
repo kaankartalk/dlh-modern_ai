@@ -12,6 +12,8 @@ Exercises on transfer learning with Keras applications.
 | `1-main.py` | Trains the full model on CIFAR-10 for 3 epochs |
 | `2-unfreeze_top.py` | `unfreeze_top_layers(model, n_layers)` unfreezes the last `n_layers` of a base model and keeps the earlier layers frozen |
 | `2-main.py` | Trains the head, then fine-tunes the top 20 backbone layers on CIFAR-10 |
+| `3-data_aug.py` | `build_data_augmentation()` returns a seeded Sequential model with flip, rotation, zoom and contrast augmentation |
+| `3-main.py` | Trains a model with augmentation on CIFAR-10 for 5 epochs |
 
 ## Requirements
 
@@ -23,3 +25,4 @@ Exercises on transfer learning with Keras applications.
     ./0-main.py
     ./1-main.py
     ./2-main.py
+    ./3-main.py

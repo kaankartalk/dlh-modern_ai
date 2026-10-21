@@ -7,16 +7,18 @@ def unfreeze_top_layers(model, n_layers):
     Unfreezes the last n_layers of a base model and keeps the rest frozen.
 
     Args:
-        model: keras Model that is the base model itself, or a full model
-            that has the base model as its second layer.
+        model: keras Model that contains the base model as a layer, or the
+            base model itself.
         n_layers: number of layers at the end of the base model to unfreeze.
 
     Returns:
         None
     """
     base = model
-    if len(model.layers) > 1 and hasattr(model.layers[1], "layers"):
-        base = model.layers[1]
+    for layer in model.layers:
+        if hasattr(layer, "layers"):
+            base = layer
+            break
 
     base.trainable = True
     n_total = len(base.layers)

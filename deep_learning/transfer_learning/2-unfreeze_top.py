@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 """Unfreeze the top layers of a pretrained base model"""
-from tensorflow import keras
 
 
 def unfreeze_top_layers(model, n_layers):
@@ -16,7 +15,7 @@ def unfreeze_top_layers(model, n_layers):
         None
     """
     base = model
-    if len(model.layers) > 1 and isinstance(model.layers[1], keras.Model):
+    if len(model.layers) > 1 and hasattr(model.layers[1], "layers"):
         base = model.layers[1]
 
     base.trainable = True
@@ -25,5 +24,7 @@ def unfreeze_top_layers(model, n_layers):
 
     for layer in base.layers[:n_total - n_unfrozen]:
         layer.trainable = False
+    for layer in base.layers[n_total - n_unfrozen:]:
+        layer.trainable = True
 
     return None

@@ -20,7 +20,6 @@ def unfreeze_top_layers(model, n_layers):
             base = layer
             break
 
-    base.trainable = True
     n_total = len(base.layers)
     n_unfrozen = max(0, min(n_layers, n_total))
 
